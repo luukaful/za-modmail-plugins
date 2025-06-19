@@ -12,4 +12,4 @@ class Say2(commands.Cog):
 
 
 async def setup(bot):
-    bot.add_cog(Say2(bot))
+    await bot.add_cog(Say2(bot))
