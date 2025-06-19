@@ -6,9 +6,9 @@ class Say2(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def say2(self, ctx, message: discord.Message):
+    async def say2(self, ctx, *, message: discord.Message):
         """Sends a message to the channel."""
-        ctx.send(message.content)
+        await ctx.send(message.content)
 
 
 async def setup(bot):
