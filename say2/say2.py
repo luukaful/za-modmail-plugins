@@ -11,10 +11,7 @@ class Say2(commands.Cog):
         for role in ctx.guild.roles:
             if role.name in message:
                 message = message.replace(f"@{role.name}", role.mention)
-        await ctx.send(
-            message,
-            allowed_mentions=discord.AllowedMentions(everyone=True, users=True, roles=True)
-        )
+        await ctx.send(message)
 
 
 async def setup(bot):
