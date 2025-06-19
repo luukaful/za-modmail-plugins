@@ -52,13 +52,15 @@ class Transfer(commands.Cog):
 
         await channel.edit(category=category)
         role = ctx.guild.get_role(role_id)
+        reply_command = self.bot.get_command("reply")
         embed = discord.Embed(
             title="Transfer",
             description=f"You are being transferred to the {role_name}. "
                         f"Please remain patient while we find a staff member to assist you.",
         )
         reply_command = self.bot.get_command("reply")
-        await ctx.send(content=role.mention if role else None, embed=embed)
+        await ctx.send(content=role.mention)
+        await ctx.invoke(reply_command, message=embed)
 
 async def setup(bot):
     await bot.add_cog(Transfer(bot))
