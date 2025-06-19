@@ -60,7 +60,7 @@ class Transfer(commands.Cog):
         )
         reply_command = self.bot.get_command("reply")
         await ctx.send(content=role.mention)
-        await ctx.invoke(reply_command, message=embed)
+        await ctx.invoke(reply_command, msg=embed)
 
 async def setup(bot):
     await bot.add_cog(Transfer(bot))
